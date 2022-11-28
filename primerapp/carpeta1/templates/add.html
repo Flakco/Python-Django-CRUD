@@ -1,0 +1,19 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'carpeta1/styles.css' %}">
+
+<h1>ADD MEMBER</h1>
+
+<form action="addrecord/" method="post">
+{% csrf_token %}
+    First Name:<br>
+    <input name="first">
+    Last Name:<br>
+    <input name="last">
+    Email:<br>
+    <input name="email">
+    Adress:<br>
+    <input name="adress">
+    Phone:<br>
+    <input name="phone">
+    <input type="submit" value="Submit">
+</form>

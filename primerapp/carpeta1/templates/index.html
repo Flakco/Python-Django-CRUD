@@ -1,0 +1,26 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'carpeta1/styles.css' %}">
+
+<h1>MEMBERS</h1>
+<p>
+    <a href="add/">Add member</a>
+</p>
+<table border=1>
+{% for c in cnames %}
+        <td class="titles">{{ c.name }}</td>
+{% endfor %}
+{% for x in mymembers %}
+    <tr>
+        <td>{{ x.id }}</td>
+        <td>{{ x.firstname }}</td>
+        <td>{{ x.lastname }}</td>
+        <td class="email">{{ x.email }}</td>
+        <td>{{ x.adress }}</td>
+        <td>{{ x.phone }}</td>
+        <td><a href="update/{{ x.id }}">update</a></td>
+        <td><a href="delete/{{ x.id }}">delete</a></td>
+    </tr>
+{% endfor %}
+</table>
+
+

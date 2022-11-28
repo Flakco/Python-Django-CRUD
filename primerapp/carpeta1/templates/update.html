@@ -1,0 +1,19 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'carpeta1/styles.css' %}">
+
+<h1>UPDATE MEMBER</h1>
+
+<form action="updaterecord/{{ mymember.id }}" method="post">
+{% csrf_token %}
+    First Name:<br>
+    <input name="first" value="{{ mymember.firstname }}">
+    Last Name:<br>
+    <input name="last" value="{{ mymember.lastname }}">
+    Email:<br>
+    <input name="email" value="{{ mymember.email }}">
+    Adress:<br>
+    <input name="adress" value="{{ mymember.adress }}">
+    Phone:<br>
+    <input name="phone" value="{{ mymember.phone }}">
+    <input type="submit" value="Submit">
+</form>
